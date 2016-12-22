@@ -34,5 +34,8 @@ dir_y = 0
 
 stop = False
 
-
+def right(): setDir(1, 0)
+def left(): setDir(-1, 0)
+def up(): setDir(0, 1)
+def down(): setDir(0, -1)
 
