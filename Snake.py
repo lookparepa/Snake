@@ -6,7 +6,7 @@ SIZE = 500
 SCREEN = turtle.Screen()
 SCREEN.title("snake")
 SCREEN.setup(SIZE + 50, SIZE + 50)
-SCREEN.bgcolor("grey")
+SCREEN.bgcolor("black")
 
 food = turtle.Turtle()
 food.up()
@@ -58,6 +58,14 @@ def set_pos():
     if isFoodCollision():
         append()
         food_coor = getRandomPosition() 
+
+def loop():
+    if stop:
+        gameOver()
+        return
+    set_pos()
+    set_display()
+    SCREEN.ontimer(loop, 100)
 
 def isSelfCollision():
     global snake_coor
