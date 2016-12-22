@@ -34,6 +34,27 @@ dir_y = 0
 
 stop = False
 
+def set_display():
+    tracer = SCREEN.tracer()
+    SCREEN.tracer(0)
+    
+    food.clearstamps(1)
+    snake.clearstamps(len(snake_coor))
+    
+    food.goto(food_coor[0], food_coor[1])
+    food.stamp()
+
+    for x, y in snake_coor:
+        snake.goto(x, y)
+        snake.stamp()
+    
+    SCREEN.tracer(tracer)
+
+def loop():
+    set_pos()
+    set_display()
+   
+
 def right(): setDir(1, 0)
 def left(): setDir(-1, 0)
 def up(): setDir(0, 1)
