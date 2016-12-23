@@ -1,4 +1,5 @@
 import turtle
+import arcade
 from random import randint
 
 SIZE = 500
